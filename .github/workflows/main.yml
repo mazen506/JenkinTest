@@ -1,0 +1,18 @@
+name: Jenkins
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  build_and_deploy:
+    runs-on: windows-latest
+    steps:
+    - name: Send Email
+      uses: cinotify/github-action@main
+      with:
+        to: 'mazen506@gmail.com'
+        subject: 'تم رفع تحديثات جديدة للنظام'
+        body: 'تم رفع تحديثات جديدة!!'
